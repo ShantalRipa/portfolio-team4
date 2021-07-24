@@ -34,7 +34,7 @@ jobs:
      - name: Check out Git repository
        uses: actions/checkout@v2
      - name: Test deployment
-       run: bash prod-test.sh
+       run: sleep 5 && bash prod-test.sh
      - name: Deployment failed
        if: ${{ failure() }}
        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
