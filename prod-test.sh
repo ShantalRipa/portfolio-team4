@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script to test backend routes of the portfolio
 domain='https://week2-mlh-domain-demo.duckdns.org'
-endpoints=("/" "/health" "/register" "/login")
+endpoints=("/" "/register" "/login")
 error=0
 for endpoint in "${endpoints[@]}"
 do
