@@ -55,9 +55,9 @@ def index():
 
 
 @app.route("/health")
-def starting_url():
-    status_code = Response(status=200)
-    return status_code
+def health():
+    user_count = UserModel.query.all().count()
+    return f"Works, we have {user_count} users"
 
 
 @app.route("/aboutus")
