@@ -56,8 +56,9 @@ def index():
 
 @app.route("/health")
 def health():
-    user_count = UserModel.query.all().count()
-    return f"Works, we have {user_count} users"
+    wei = UserModel.query.filter_by(username="wei").first()
+    has_wei = "yes" if wei is not None else "no"    
+    return f"Works, has_wei: {has_wei}"
 
 
 @app.route("/aboutus")
